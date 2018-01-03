@@ -3,20 +3,20 @@ pragma solidity ^0.4.18;
 
 import "./Ownable.sol";
 import "./SafeMath.sol";
-import "./ApplouseCashToken.sol";
+import "./ApplauseCashToken.sol";
 import "./RefundVault.sol";
 
 /**
  * @title Crowdsale
  * @dev Modified contract for managing a token crowdsale.
- * ApplouseCashCrowdsale have pre-sale and main sale periods,
+ * ApplauseCashCrowdsale have pre-sale and main sale periods,
  * where investors can make token purchases and the crowdsale will assign
  * them tokens based on a token per ETH rate and the system of bonuses.
  * Funds collected are forwarded to a wallet as they arrive.
  * pre-sale and main sale periods both have caps defined in tokens.
  */
 
-contract ApplouseCashCrowdsale is Ownable {
+contract ApplauseCashCrowdsale is Ownable {
 
     using SafeMath for uint256;
 
@@ -35,7 +35,7 @@ contract ApplouseCashCrowdsale is Ownable {
     bool public isFinalized;
 
     // The token being sold
-    ApplouseCashToken public token = new ApplouseCashToken();
+    ApplauseCashToken public token = new ApplauseCashToken();
 
     // start and end timestamps where pre-investments are allowed (both inclusive)
     uint256 public preIcoStartTime;
@@ -77,7 +77,7 @@ contract ApplouseCashCrowdsale is Ownable {
      */
     event TokenPurchase(address indexed purchaser, address indexed beneficiary, uint256 value, uint256 amount);
 
-    function ApplouseCashCrowdsale(
+    function ApplauseCashCrowdsale(
         uint256 _preIcoStartTime,
         uint256 _preIcoEndTime,
         uint256 _preIcoHardcap,

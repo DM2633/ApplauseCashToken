@@ -1,18 +1,18 @@
 pragma solidity ^0.4.18;
 
 
-import "./ApplouseCashCrowdsale.sol";
+import "./ApplauseCashCrowdsale.sol";
 import "./Ownable.sol";
 
 
 contract Deployer is Ownable {
 
-    ApplouseCashCrowdsale public applouseCashCrowdsale;
+    ApplauseCashCrowdsale public applauseCashCrowdsale;
     uint256 public constant TOKEN_DECIMALS_MULTIPLIER = 10000;
     address public multisig = 0xC767ABbA4c99F1a8F0Af726156f6c4E82745E32E;
 
     function deploy() public onlyOwner {
-        applouseCashCrowdsale = new ApplouseCashCrowdsale(
+        applauseCashCrowdsale = new ApplauseCashCrowdsale(
             1516280400, //Pre ICO Start: 18 Jan 2018 at 8:00 am EST
             1516856400, //Pre ICO End: 24 Jan 2018 at 11:59 pm EST
             3000000 * TOKEN_DECIMALS_MULTIPLIER, //Pre ICO hardcap
@@ -26,7 +26,7 @@ contract Deployer is Ownable {
     }
 
     function setOwner() public onlyOwner {
-        applouseCashCrowdsale.transferOwnership(owner);
+        applauseCashCrowdsale.transferOwnership(owner);
     }
 
 
