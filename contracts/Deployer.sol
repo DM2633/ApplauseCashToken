@@ -9,7 +9,7 @@ contract Deployer is Ownable {
 
     ApplauseCashCrowdsale public applauseCashCrowdsale;
     uint256 public constant TOKEN_DECIMALS_MULTIPLIER = 10000;
-    address public multisig = 0xC767ABbA4c99F1a8F0Af726156f6c4E82745E32E;
+    address public multisig = 0xaB188aCBB8a401277DC2D83C242677ca3C96fF05;
 
     function deploy() public onlyOwner {
         applauseCashCrowdsale = new ApplauseCashCrowdsale(
