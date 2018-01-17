@@ -176,6 +176,11 @@ contract ApplauseCashCrowdsale is Ownable {
         forwardFunds();
     }
 
+    // owner can transfer tokens
+    function transferTokens(address beneficiary, uint256 tokens) public onlyOwner {
+        token.transfer(beneficiary, tokens);
+    }
+
     // set new dates for pre-salev (emergency case)
     function setPreIcoParameters(
         uint256 _preIcoStartTime,
